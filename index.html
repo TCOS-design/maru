@@ -7,39 +7,46 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maru</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
     <div class="weather-app">
         <header>
-            <form class="search-form">
-                <input type="search" placeholder="Enter a city.." required class="search-form-input">
+            <form class="search-form" id="search-form">
+                <input type="search" placeholder="Enter a city.." required id="search-form-input"  class="search-form-input">
                 <input type="submit" value="Search" class="search-form-button">
             </form>
         </header>
       <main>
         <div class="weather-app-data">
             <div class="weather-app-data-column">
-              <h1 class="weather-app-city">Johannesburg</h1>
+              <h1 class="weather-app-city" id="city">Johannesburg</h1>
               <p class="weather-app-details">
-                Saturday 02:00, clear skies
+                <span id="time">Saturday 02:00</span>, 
+                <span id="description">clear skies</span>
                 <br />
-                Humidity: 36%, Wind: 2.14km/h
+                Humidity: 
+                <strong id="humidity">36%</strong>, 
+                Wind: 
+                <strong id="wind-speed">2.14km/h</strong>
               </p>
             </div>
             <div class="weather-app-data-column">
               <div class="weather-app-temperature-container">
+                <div id="icon">
                 <img
                   src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
                   alt="weather-app-icon"
                 />
-                <div class="weather-app-temperature">17</div>
+                </div>
+                <div class="weather-app-temperature" id="temperature">17</div>
                 <div class="weather-app-unit">°C</div>
               </div>
             </div>
           </div>
         
-        <div class="weather-forecast">
+        <div class="weather-forecast" id="forecast">
             <div class="weather-forecast-day">
                 <div class="weather-forecast-date">Sat</div>
                 <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" class="weather-forecast-icon">
@@ -93,5 +100,6 @@
       </footer>
     </div>
     </div>
+    <script src="src/index.js"></script>
 </body>
 </html>
